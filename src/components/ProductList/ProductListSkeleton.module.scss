@@ -1,0 +1,140 @@
+.section {
+  width: min(1280px, calc(100% - 32px));
+  margin: 36px auto 44px;
+}
+
+.section__title,
+.section__tab,
+.card__image,
+.card__lineLg,
+.card__lineMd,
+.card__lineSm,
+.card__button {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-gray-250);
+  border-radius: var(--radius-sm);
+}
+
+.section__title,
+.section__tab,
+.card__image,
+.card__lineLg,
+.card__lineMd,
+.card__lineSm,
+.card__button {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.55) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 1.2s infinite;
+  }
+}
+
+.section__title {
+  width: 320px;
+  max-width: 60%;
+  height: 34px;
+  margin: 0 auto 18px;
+}
+
+.section__tabs {
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  background: var(--color-surface-soft);
+  margin-bottom: 18px;
+}
+
+.section__tab {
+  height: 48px;
+  border-radius: 0;
+  border-right: 1px solid var(--color-gray-300);
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+.section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  background: var(--color-bg);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 12px;
+}
+
+.card__lineLg {
+  height: 14px;
+  margin-bottom: 10px;
+}
+
+.card__lineMd {
+  width: 72%;
+  height: 12px;
+  margin-bottom: 10px;
+}
+
+.card__lineSm {
+  width: 48%;
+  height: 12px;
+  margin-bottom: 14px;
+}
+
+.card__button {
+  width: 100%;
+  height: 40px;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section__tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .section__title {
+    height: 28px;
+  }
+
+  .section__tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section__tab {
+    height: 42px;
+  }
+
+  .section__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,138 @@
+.newsletter {
+  background: var(--color-primary-dark);
+  color: var(--color-bg);
+  padding: 40px 0;
+  width: calc(100% + 160px);
+  margin-inline: -80px;
+
+  &__container {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding-inline: 80px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(280px, 1fr) minmax(420px, 1fr);
+    align-items: center;
+  }
+
+  &__content {
+    h2 {
+      font-size: 26px;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+
+    p {
+      max-width: 520px;
+      color: var(--color-newsletter-text);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) auto;
+    gap: 8px;
+
+    input {
+      height: 44px;
+      border: 0;
+      border-radius: var(--radius-md);
+      padding: 0 16px;
+      font-size: 14px;
+    }
+
+    button {
+      height: 44px;
+      border: 0;
+      border-radius: var(--radius-md);
+      padding: 0 26px;
+      background: var(--color-accent);
+      color: var(--color-primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-newsletter-text-soft);
+
+    input {
+      width: 14px;
+      height: 14px;
+      accent-color: var(--color-accent);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .newsletter {
+    width: calc(100% + 48px);
+    margin-inline: -24px;
+
+    &__container {
+      padding-inline: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    &__inputs {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      button {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .newsletter {
+    width: calc(100% + 32px);
+    margin-inline: -16px;
+
+    &__container {
+      padding-inline: 16px;
+    }
+
+    &__content {
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    &__inputs {
+      grid-template-columns: 1fr;
+
+      button {
+        grid-column: auto;
+      }
+    }
+  }
+}

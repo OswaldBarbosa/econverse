@@ -1,0 +1,113 @@
+.partner {
+  width: min(1280px, calc(100% - 32px));
+  margin: 28px auto;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    min-height: 220px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 28px 34px 32px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.24) 45%, rgba(0, 0, 0, 0) 78%);
+
+    h3 {
+      color: var(--color-bg);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    p {
+      max-width: 180px;
+      color: var(--color-bg);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    button {
+      border: 0;
+      border-radius: var(--radius-lg);
+      height: 42px;
+      min-width: 130px;
+      padding: 0 18px;
+      background: var(--color-accent);
+      color: var(--color-primary-dark);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .partner {
+    grid-template-columns: 1fr;
+
+    &__content {
+      h3 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      button {
+        height: 40px;
+        min-width: 112px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .partner {
+    &__card {
+      min-height: 190px;
+    }
+
+    &__content {
+      padding: 20px 20px 22px;
+      gap: 14px;
+
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        max-width: 180px;
+        font-size: 13px;
+      }
+
+      button {
+        height: 36px;
+        min-width: 124px;
+        border-radius: var(--radius-md);
+        font-size: 14px;
+      }
+    }
+  }
+}
