@@ -1,6 +1,10 @@
 # Econverse - Vitrine de Produtos
 
-Projeto frontend de vitrine de produtos, desenvolvido com Next.js (App Router), TypeScript e SCSS Modules, com foco em componentizacao, responsividade, acessibilidade e performance.
+Projeto frontend de vitrine de produtos, desenvolvido com Next.js (App Router), TypeScript e SCSS Modules, com foco em componentização, responsividade, acessibilidade e performance.
+
+## Projeto hospedado
+
+[https://econverse-omega.vercel.app/](https://econverse-omega.vercel.app/)
 
 ## Tecnologias utilizadas
 
@@ -9,18 +13,18 @@ Projeto frontend de vitrine de produtos, desenvolvido com Next.js (App Router), 
 - TypeScript
 - SCSS Modules (Sass)
 - ESLint
-- `next/image` para otimizacao de imagens
+- `next/image` para otimização de imagens
 - API interna do Next.js (`app/api`) para proxy de dados
 
 ## Funcionalidades atuais
 
-- Header responsivo com categorias selecionaveis
+- Header responsivo com categorias selecionáveis
 - Banner principal (hero)
 - Departamentos com cards clicaveis e estado ativo
 - Lista de produtos em carrossel horizontal
 - Skeleton loading durante carregamento de produtos
 - Modal de produto (abre detalhes, fecha com overlay e tecla `ESC`)
-- Secoes complementares:
+- Seções complementares:
   - Parceiros
   - Marcas
   - Newsletter
@@ -29,13 +33,13 @@ Projeto frontend de vitrine de produtos, desenvolvido com Next.js (App Router), 
 
 ## Como rodar o projeto
 
-### 1) Instalar dependencias
+### 1) Instalar dependências
 
 ```bash
 npm install
 ```
 
-### 2) Configurar variaveis de ambiente
+### 2) Configurar variáveis de ambiente
 
 Crie/ajuste o arquivo `.env` com:
 
@@ -52,12 +56,12 @@ npm run dev
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
-## Scripts disponiveis
+## Scripts disponíveis
 
 - `npm run dev`: inicia ambiente de desenvolvimento
-- `npm run build`: gera build de producao
-- `npm run start`: sobe a aplicacao em modo producao
-- `npm run lint`: executa validacao com ESLint
+- `npm run build`: gera build de produção
+- `npm run start`: sobe a aplicação em modo produção
+- `npm run lint`: executa validação com ESLint
 
 ## Estrutura principal
 
@@ -96,12 +100,12 @@ src/
     product.ts
 ```
 
-## Arquitetura e decisoes tecnicas
+## Arquitetura e decisões técnicas
 
-- **Separacao de responsabilidades**
+- **Separação de responsabilidades**
   - UI em componentes (`src/components`)
   - regras de estado em hooks (`src/hooks`)
-  - consumo/normalizacao de API em service (`src/services/api.ts`)
+  - consumo/normalização de API em service (`src/services/api.ts`)
 - **Proxy de API via Next.js**
   - cliente consome `GET /api/products`
   - rota interna busca dados da API remota e evita problemas de CORS no browser
@@ -109,26 +113,26 @@ src/
   - tipo `Product` centralizado em `src/types/product.ts`
 - **Escalabilidade**
   - constantes compartilhadas em `src/constants/index.ts`
-  - componentes reutilizaveis e modulares
+  - componentes reutilizáveis e modulares
 - **Acessibilidade**
-  - labels em campos e botoes
-  - navegacao com semantica (`header`, `nav`, `section`)
+  - labels em campos e botões
+  - navegação com semântica (`header`, `nav`, `section`)
   - modal com `aria-modal`, fechamento por `ESC` e overlay
 - **Performance**
   - `next/image` para imagens
-  - carregamento dinamico de secoes nao criticas
+  - carregamento dinâmico de seções não críticas
   - skeleton para feedback visual durante fetch
 
-## Observacoes de performance
+## Observações de performance
 
-Para avaliar Lighthouse com maior precisao, execute em modo producao:
+Para avaliar Lighthouse com maior precisão, execute em modo produção:
 
 ```bash
 npm run build
 npm run start
 ```
 
-Depois rode a auditoria em `http://localhost:3000` com o servidor em producao.
+Depois rode a auditoria em `http://localhost:3000` com o servidor em produção.
 
 ## Melhorias futuras (sugestoes)
 
